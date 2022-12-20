@@ -23,9 +23,11 @@ struct ContentView: View {
             ZStack {
 //                Color.black
 //                    .edgesIgnoringSafeArea(.all)
-                StarShape()
-                    .fill(.yellow)
+//                StarShape()
+//                    .fill(.yellow)
+                CuteStarView()
             }
+//            .frame(width: 300, height: 300)
         } else {
             ZStack {
 //                Color.black
@@ -37,8 +39,8 @@ struct ContentView: View {
                 
                 StarShape()
                     .trim(from: strokeStart, to: strokeEnd)
-                    .stroke(style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round, miterLimit: 10))
-                    .foregroundColor(Color.yellow)
+                    .stroke(style: StrokeStyle(lineWidth: 40, lineCap: .round, lineJoin: .round, miterLimit: 10))
+                    .foregroundColor(Color.orange)
                     .onAppear() {
                         var counter = 0
                         Timer.scheduledTimer(withTimeInterval: 0.35, repeats: true) { timer in
@@ -76,6 +78,7 @@ struct ContentView: View {
                     }.padding(.trailing, 16)
                 }
             }
+//            .frame(width: 300, height: 300)
         }
     }
 }
