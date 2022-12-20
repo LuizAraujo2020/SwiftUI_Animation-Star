@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CuteStarView: View {
-    
     // MARK:- variables
     let animationDuration: Double = 0.25
     
@@ -17,16 +16,7 @@ struct CuteStarView: View {
     @State var floatLike: Bool = false
     @State var showFlare: Bool = false
     
-    
     var body: some View {
-//        ZStack {
-//            StarShape()
-//                .fill(.cyan)
-//                .frame(width: 300)
-//
-//            StarShape()
-//                .overlay(path.stroke(Color.black, lineWidth: 2))
-//        }
         ZStack {
             if (floatLike) {
                 CapusuleGroupView(isAnimating: $floatLike)

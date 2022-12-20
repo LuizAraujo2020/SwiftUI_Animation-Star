@@ -20,18 +20,10 @@ struct ContentView: View {
     // MARK:- views
     var body: some View {
         if animationEnded {
-            ZStack {
-//                Color.black
-//                    .edgesIgnoringSafeArea(.all)
-//                StarShape()
-//                    .fill(.yellow)
                 CuteStarView()
-            }
-//            .frame(width: 300, height: 300)
+
         } else {
             ZStack {
-//                Color.black
-//                    .edgesIgnoringSafeArea(.all)
                 StarShape()
                     .stroke(style: StrokeStyle(lineWidth: 2.5, lineCap: .round, lineJoin: .round, miterLimit: 5))
                     .foregroundColor(Color.white)
@@ -40,7 +32,7 @@ struct ContentView: View {
                 StarShape()
                     .trim(from: strokeStart, to: strokeEnd)
                     .stroke(style: StrokeStyle(lineWidth: 40, lineCap: .round, lineJoin: .round, miterLimit: 10))
-                    .foregroundColor(Color.orange)
+                    .foregroundColor(Color.yellow)
                     .onAppear() {
                         var counter = 0
                         Timer.scheduledTimer(withTimeInterval: 0.35, repeats: true) { timer in
@@ -61,24 +53,12 @@ struct ContentView: View {
                                 
                                 // Gets the end of the animation
                                 if (counter == 11) {
-                                    print("ACABIOU")
                                     animationEnded = true
                                 }
                             }
                         }
                     }
-                VStack{
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        Text("@Shubham_iosdev")
-                            .foregroundColor(.white)
-                            .font(.system(size: 28, weight: .medium, design: .monospaced))
-                            .opacity(0.3)
-                    }.padding(.trailing, 16)
-                }
             }
-//            .frame(width: 300, height: 300)
         }
     }
 }
